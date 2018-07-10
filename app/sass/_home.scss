@@ -1,0 +1,280 @@
+// intro section
+.intro-section {
+    background: $color-green;
+    padding: 80px 15px;
+    text-align: center;
+
+    @include breakpoint(large_tablet) {
+        padding: 98px 0;
+    }
+}
+
+.intro-img {
+    margin: 0 auto 40px;
+}
+
+.home-section {
+    padding: 40px 0;
+
+    @include breakpoint(large_tablet) {
+        padding: 92px 0 70px;
+    }
+}
+
+// portfolio section
+.portfolio-grid {
+    padding: 7.5px 15px;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px 0 0;
+    }
+}
+
+.portfolio-item {
+    margin-bottom: 15px;
+
+    @include breakpoint(tablet) {
+        margin-bottom: 30px;
+        flex: 1 0 50%;
+        padding: 0 15px;
+        position: relative;
+    }
+
+    @include breakpoint(large_tablet) {
+        flex: 1 0 33.333%;
+    }
+
+    &:hover .portfolio-icon {
+        opacity: 1;
+    }
+}
+
+.portfolio-icon {
+    display: none;
+
+    @include breakpoint(tablet) {
+        display: block;
+        cursor: pointer;
+        color: $color-white;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-fast;
+        display: flex;
+        opacity: 0;
+        width: calc(100% - 30px);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        background: rgba(24,188,156,.9);
+
+        i {
+            //NOTE: there are no var because of untipical size
+            font-size: $xxlarge-font;
+        }
+    }
+}
+
+.portfolio-img {
+    max-width: 100%;
+}
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 11;
+    
+    @include breakpoint(large_tablet) {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    &[data-state="hidden"] {
+        display: none;
+    }
+}
+
+.popup-icon {
+    max-width: 100%;
+    margin: 20px 0;
+
+    @include breakpoint(large_tablet) {
+        max-width: 50%;
+    }
+}
+
+.popup-close {
+    font-size: $large-font;
+    color: $color-blue;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.popup-text {
+    color: $color-blue;
+    font-size: $medium-font;
+}
+
+.popup-wrapper {
+    position: relative;
+    width: 100%;
+    background: $color-white;
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 100%;
+
+    @include breakpoint(large_tablet) {
+        max-width: 800px;
+        height: auto;
+    }
+}
+
+// about section
+.about-section {
+    background: $color-green;
+}
+
+.about-desc-column {
+    color: $color-white;
+    font-size: $medium-font;
+    padding: 0 15px;
+    margin-bottom: 20px;
+
+    @include breakpoint(large_tablet) {
+        flex: 0 1 33.33%;
+        margin: 0;
+        font-size: $large-font;
+
+        &:first-child {
+            margin-left: auto;
+        }
+    
+        &:last-child {
+            margin-right: auto;
+        }
+    }
+}
+
+.about-desc {
+    padding: 10px 0 40px;
+    line-height: 1.5;
+
+    @include breakpoint(large_tablet) {
+        display: flex;
+    }
+}
+
+.about-button {
+    font-size: $large-font;
+    color: $color-white;
+    padding: 16px 35px;
+    border: 2px solid  $color-white;
+    border-radius: 4px;
+    background: none;
+    margin: 0 auto 25px;
+    outline: none;
+    display: block;
+    transition: $transition-fast;
+
+    &:hover {
+        background: $color-white;
+        color: $color-green;
+    }
+}
+
+.about-icon {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: $medium-font;
+}
+
+// contact section
+.contact-form {
+    max-width: 760px;
+    width: 100%;
+    padding: 37px 15px;
+    margin: 0 auto;
+}
+
+.form-input {
+    border: none;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background: none;
+    font-size: $medium-font;
+    color: $color-grey;
+    padding: 6px 0;
+
+    @include breakpoint(large_tablet) {
+        font-size: 24px;
+    }
+
+    &:focus + .floating-label, &:not(:placeholder-shown) + .floating-label {
+        top: -15px;
+        color: $color-green;
+        opacity: 1;
+        font-size: $xsmall-font;
+
+        @include breakpoint(large_tablet) {
+            font-size: $medium-font;
+            top: -25px;
+        }
+    }
+}
+
+.floating-label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transition: $transition-fast;
+    font-size: $medium-font;
+    color: $color-grey;
+    font-weight: $regular;
+
+    @include breakpoint(large_tablet) {
+        font-size: 24px;
+    }
+}
+
+.form-group {
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include breakpoint(large_tablet) {
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+}
+
+.form-submit-button {
+    background: $color-green;
+    font-size: $large-font;
+    padding: 16px 28px;
+    border-radius: 4px;
+    border: 2px solid $color-green;
+    transition: $transition-fast;
+
+    &:hover {
+        background: none;
+        color: $color-green;
+    }
+}
+

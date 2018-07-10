@@ -1,0 +1,25 @@
+
+/* example 
+@include breakpoint(large) {
+    background: darken(#517293, 15%);
+    font-size: 140%;  
+}
+*/
+
+@mixin breakpoint($point) {
+    @if $point == 'tablet' {
+        @media (min-width: 550px)  { @content; }
+    }
+    @else if $point == 'large_tablet' {
+        @media (min-width: 900px) { @content; }
+    }
+    @else if $point == 'desktop' {
+        @media (min-width: 50em) { @content; }
+    }
+    @else if $point == 'large-desktop' {
+        @media (min-width: 50em) { @content; }
+    }
+    @else if $point { // allows custom breakpoints
+        @media (min-width: $point) { @content; }
+    }
+}
