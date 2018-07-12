@@ -1,4 +1,4 @@
-<h1>Template for InterviewMe</h1>
+<h1>Template</h1>
 
 
 
