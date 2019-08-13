@@ -11,6 +11,6 @@
 
 <ul>
 	<li><strong>gulp sass</strong>: run  gulp task that compile sass to css</li>
-	<li><strong>gulp sass</strong>: minify js code</li>
+	<li><strong>gulp js</strong>: minify js code</li>
 </ul>
 NOTE: this template isn't retina ready. I can prepare It for retina with assets in svg format. 
